@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/recipe_provider.dart';
+import '../theme/app_theme.dart';
 import '../widgets/recipe_card.dart';
 import '../widgets/state_views.dart';
 import 'recipe_detail_screen.dart';
@@ -13,7 +14,19 @@ class RecipeResultsScreen extends StatelessWidget {
     final recipeProvider = context.watch<RecipeProvider>();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Recipes for you')),
+      appBar: AppBar(
+        title: Text(
+          'Recipes for you',
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.w800,
+                color: const Color(0xFF1A1A1A),
+              ),
+        ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new_rounded),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+      ),
       body: _buildBody(context, recipeProvider),
     );
   }
@@ -24,35 +37,46 @@ class RecipeResultsScreen extends StatelessWidget {
     if (rp.error != null) {
       return ErrorView(
         message: rp.error!,
-        // Re-read the pantry from context to retry the same query
-        onRetry: () {
-          // The results screen itself doesn't hold pantry slugs; the caller
-          // already triggered match() before pushing this route. On retry we
-          // just call match() again with whatever is currently in the provider.
-          // Because we don't have the slugs here, we simply pop and let the
-          // user tap "Find Recipes" again — simplest option per section 12.
-          Navigator.of(context).pop();
-        },
+        onRetry: () => Navigator.of(context).pop(),
       );
     }
 
     if (rp.results.isEmpty) {
-      return const EmptyView(
-        message: 'No recipes match your pantry yet.\nTry ticking more ingredients.',
+      return EmptyView(
+        emoji: '🥣',
+        message: 'No matches yet, try adding a few more ingredients',
+        actionLabel: 'Back to Kitchen',
+        onAction: () => Navigator.of(context).pop(),
       );
     }
 
     return ListView.builder(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: AppTheme.spaceS),
       itemCount: rp.results.length,
       itemBuilder: (context, index) {
         final match = rp.results[index];
-        return RecipeCard(
-          match: match,
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => RecipeDetailScreen(match: match),
+        // Staggered fade and slide animation
+        final delayMs = index * 80;
+        return TweenAnimationBuilder<double>(
+          tween: Tween(begin: 0.0, end: 1.0),
+          duration: Duration(milliseconds: 300 + delayMs),
+          curve: Curves.easeOutCubic,
+          builder: (context, value, child) {
+            return Opacity(
+              opacity: value,
+              child: Transform.translate(
+                offset: Offset(0, 20 * (1 - value)),
+                child: child,
+              ),
+            );
+          },
+          child: RecipeCard(
+            match: match,
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => RecipeDetailScreen(match: match),
+              ),
             ),
           ),
         );

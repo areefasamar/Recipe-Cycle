@@ -6,6 +6,7 @@ import 'providers/recipe_provider.dart';
 import 'services/local_data_service.dart';
 import 'services/pantry_storage.dart';
 import 'screens/ingredient_checklist_screen.dart';
+import 'theme/app_theme.dart';
 
 void main() {
   runApp(const RecipeCycleApp());
@@ -31,11 +32,8 @@ class RecipeCycleApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Recipe Cycle',
-        // Material 3 with a single seed color; light theme only
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-          useMaterial3: true,
-        ),
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.light(),
         home: const IngredientChecklistScreen(),
       ),
     );
