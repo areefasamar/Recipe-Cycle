@@ -1,0 +1,97 @@
+[
+  {
+    "id": "r1",
+    "title": "Daal Masoor",
+    "description": "Simple everyday red lentil curry.",
+    "ingredients": ["red-lentils", "onion", "tomato", "garlic", "ginger", "turmeric", "red-chilli-powder", "cumin-seeds", "cooking-oil", "salt", "water"],
+    "steps": [
+      "Boil red lentils with water and turmeric until soft.",
+      "Heat oil, fry cumin seeds, then add chopped onion and cook until golden.",
+      "Add garlic and ginger paste, fry for 1 minute.",
+      "Add chopped tomatoes and red chilli powder, cook until oil separates.",
+      "Add the boiled lentils, simmer 5 minutes and season with salt."
+    ],
+    "prepMinutes": 25,
+    "servings": 3,
+    "tags": ["vegetarian", "desi", "quick"]
+  },
+  {
+    "id": "r2",
+    "title": "Aloo Gobi",
+    "description": "Dry potato and cauliflower stir-fry.",
+    "ingredients": ["potato", "cauliflower", "onion", "tomato", "turmeric", "cumin-seeds", "coriander-powder", "red-chilli-powder", "cooking-oil", "salt"],
+    "steps": [
+      "Heat oil and fry cumin seeds until they splutter.",
+      "Add sliced onion and cook until translucent.",
+      "Add diced potato and cauliflower florets, stir well.",
+      "Mix in spices, cover and cook on low heat for 15 minutes, stirring occasionally.",
+      "Add chopped tomato, cook uncovered until dry."
+    ],
+    "prepMinutes": 30,
+    "servings": 2,
+    "tags": ["vegetarian", "desi"]
+  },
+  {
+    "id": "r3",
+    "title": "Chicken Karahi",
+    "description": "Classic Pakistani chicken cooked in a wok with tomatoes.",
+    "ingredients": ["chicken", "tomato", "garlic", "ginger", "yogurt", "cooking-oil", "cumin-seeds", "garam-masala", "red-chilli-powder", "salt"],
+    "steps": [
+      "Heat oil in a karahi, add cumin seeds.",
+      "Add chicken pieces and sear until white.",
+      "Add garlic and ginger, fry 2 minutes.",
+      "Add chopped tomatoes and all spices, cook until tomatoes break down.",
+      "Add yogurt, mix well and cook on medium heat until oil separates and chicken is cooked through."
+    ],
+    "prepMinutes": 40,
+    "servings": 4,
+    "tags": ["desi", "chicken"]
+  },
+  {
+    "id": "r4",
+    "title": "Egg Fried Rice",
+    "description": "Quick leftover rice stir-fry with eggs.",
+    "ingredients": ["basmati-rice", "egg", "onion", "garlic", "cooking-oil", "salt"],
+    "steps": [
+      "Cook rice and let it cool completely (day-old rice works best).",
+      "Beat eggs and scramble in oil, set aside.",
+      "Fry onion and garlic in oil until golden.",
+      "Add rice, stir-fry on high heat.",
+      "Mix in scrambled egg, season with salt and serve."
+    ],
+    "prepMinutes": 20,
+    "servings": 2,
+    "tags": ["quick", "rice"]
+  },
+  {
+    "id": "r5",
+    "title": "Keema Aloo",
+    "description": "Minced beef and potato curry.",
+    "ingredients": ["beef-mince", "potato", "onion", "tomato", "garlic", "ginger", "garam-masala", "turmeric", "red-chilli-powder", "cooking-oil", "salt"],
+    "steps": [
+      "Fry onion in oil until dark golden.",
+      "Add garlic and ginger paste, cook 1 minute.",
+      "Add mince, break up lumps and cook until water dries.",
+      "Add spices and tomatoes, cook until oil surfaces.",
+      "Add cubed potato and 1/2 cup water, simmer covered until potatoes are tender."
+    ],
+    "prepMinutes": 45,
+    "servings": 4,
+    "tags": ["desi", "beef"]
+  },
+  {
+    "id": "r6",
+    "title": "Pasta in Tomato Sauce",
+    "description": "Simple pasta with a quick homemade tomato sauce.",
+    "ingredients": ["pasta", "tomato", "garlic", "cooking-oil", "salt"],
+    "steps": [
+      "Boil pasta in salted water until al dente, reserve 1/4 cup pasta water.",
+      "Fry minced garlic in oil for 30 seconds.",
+      "Add chopped tomatoes, season with salt, simmer 10 minutes.",
+      "Toss pasta in the sauce, adding pasta water to loosen if needed."
+    ],
+    "prepMinutes": 20,
+    "servings": 2,
+    "tags": ["vegetarian", "quick", "global"]
+  }
+]
