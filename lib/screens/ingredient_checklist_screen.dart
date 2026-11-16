@@ -5,7 +5,9 @@ import '../providers/ingredient_provider.dart';
 import '../providers/pantry_provider.dart';
 import '../providers/recipe_provider.dart';
 import '../theme/app_theme.dart';
+import '../providers/auth_provider.dart';
 import 'history_screen.dart';
+import 'login_screen.dart';
 import 'recipe_results_screen.dart';
 
 // Emoji for each category, in the fixed order from the architecture doc
@@ -251,6 +253,59 @@ class _Header extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (_) => const HistoryScreen(),
                     ),
+                  );
+                },
+              ),
+              Consumer<AuthProvider>(
+                builder: (context, auth, _) {
+                  if (auth.isGuest || auth.user == null) {
+                    return IconButton(
+                      icon: const Icon(Icons.account_circle_outlined),
+                      tooltip: 'Sign In',
+                      color: AppTheme.primary,
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const LoginScreen(),
+                          ),
+                        );
+                      },
+                    );
+                  }
+                  return PopupMenuButton<String>(
+                    icon: const Icon(
+                      Icons.account_circle_rounded,
+                      color: AppTheme.primary,
+                    ),
+                    tooltip: 'Account',
+                    onSelected: (value) {
+                      if (value == 'logout') {
+                        context.read<AuthProvider>().logout();
+                      }
+                    },
+                    itemBuilder: (context) => [
+                      PopupMenuItem<String>(
+                        enabled: false,
+                        child: Text(
+                          auth.user!.name,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF1A1A1A),
+                          ),
+                        ),
+                      ),
+                      const PopupMenuDivider(),
+                      const PopupMenuItem<String>(
+                        value: 'logout',
+                        child: Row(
+                          children: [
+                            Icon(Icons.logout_rounded, size: 18),
+                            SizedBox(width: 8),
+                            Text('Log out'),
+                          ],
+                        ),
+                      ),
+                    ],
                   );
                 },
               ),

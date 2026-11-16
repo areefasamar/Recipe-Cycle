@@ -7,7 +7,8 @@ import '../models/recipe_match.dart';
 
 class ApiException implements Exception {
   final String message;
-  const ApiException(this.message);
+  final int? statusCode;
+  const ApiException(this.message, [this.statusCode]);
 
   @override
   String toString() => message;
