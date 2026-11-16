@@ -5,6 +5,7 @@ import '../providers/ingredient_provider.dart';
 import '../providers/pantry_provider.dart';
 import '../providers/recipe_provider.dart';
 import '../theme/app_theme.dart';
+import 'history_screen.dart';
 import 'recipe_results_screen.dart';
 
 // Emoji for each category, in the fixed order from the architecture doc
@@ -219,7 +220,7 @@ class _Header extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Logo row: leaf icon + app name
+          // Logo row: leaf icon + app name + history button
           Row(
             children: [
               Container(
@@ -239,6 +240,19 @@ class _Header extends StatelessWidget {
                       color: AppTheme.primary,
                       fontWeight: FontWeight.w800,
                     ),
+              ),
+              const Spacer(),
+              IconButton(
+                icon: const Icon(Icons.history_rounded),
+                tooltip: 'Cooked History',
+                color: AppTheme.primary,
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const HistoryScreen(),
+                    ),
+                  );
+                },
               ),
             ],
           ),

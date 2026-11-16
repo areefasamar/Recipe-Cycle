@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../models/history_entry.dart';
 import '../models/recipe_match.dart';
+import '../providers/history_provider.dart';
 import '../providers/pantry_provider.dart';
 import '../theme/app_theme.dart';
 
@@ -300,6 +302,12 @@ class RecipeDetailScreen extends StatelessWidget {
   }
 
   Future<void> _onCooked(BuildContext context) async {
+    final historyEntry = HistoryEntry(
+      recipeId: match.recipe.id,
+      title: match.recipe.title,
+      cookedAt: DateTime.now(),
+    );
+    await context.read<HistoryProvider>().add(historyEntry);
     await context.read<PantryProvider>().removeAll(match.matched);
     if (context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(

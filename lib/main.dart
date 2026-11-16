@@ -3,8 +3,10 @@ import 'package:provider/provider.dart';
 import 'providers/ingredient_provider.dart';
 import 'providers/pantry_provider.dart';
 import 'providers/recipe_provider.dart';
+import 'providers/history_provider.dart';
 import 'services/api_service.dart';
 import 'services/pantry_storage.dart';
+import 'services/history_storage.dart';
 import 'screens/ingredient_checklist_screen.dart';
 import 'theme/app_theme.dart';
 
@@ -30,6 +32,9 @@ class RecipeCycleApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => RecipeProvider(apiService),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => HistoryProvider(HistoryStorage()),
         ),
       ],
       child: MaterialApp(
