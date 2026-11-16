@@ -6,6 +6,7 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const ingredientRoutes = require('./routes/ingredients');
 const recipeRoutes = require('./routes/recipes');
+const authRoutes = require('./routes/auth');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -25,6 +26,7 @@ app.get('/api/health', (req, res) => {
 // Resource routes
 app.use('/api/ingredients', ingredientRoutes);
 app.use('/api/recipes', recipeRoutes);
+app.use('/api/auth', authRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
