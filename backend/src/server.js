@@ -4,6 +4,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
+const ingredientRoutes = require('./routes/ingredients');
+const recipeRoutes = require('./routes/recipes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,6 +21,10 @@ connectDB();
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
+
+// Resource routes
+app.use('/api/ingredients', ingredientRoutes);
+app.use('/api/recipes', recipeRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

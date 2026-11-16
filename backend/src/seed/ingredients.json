@@ -1,0 +1,44 @@
+[
+  { "name": "Onion",          "slug": "onion",          "category": "Vegetables",        "aliases": ["pyaz"],               "isStaple": false },
+  { "name": "Tomato",         "slug": "tomato",         "category": "Vegetables",        "aliases": ["tamatar"],            "isStaple": false },
+  { "name": "Garlic",         "slug": "garlic",         "category": "Vegetables",        "aliases": ["lehsan"],             "isStaple": false },
+  { "name": "Ginger",         "slug": "ginger",         "category": "Vegetables",        "aliases": ["adrak"],              "isStaple": false },
+  { "name": "Potato",         "slug": "potato",         "category": "Vegetables",        "aliases": ["aloo"],               "isStaple": false },
+  { "name": "Spinach",        "slug": "spinach",        "category": "Vegetables",        "aliases": ["palak"],              "isStaple": false },
+  { "name": "Capsicum",       "slug": "capsicum",       "category": "Vegetables",        "aliases": ["shimla mirch"],       "isStaple": false },
+  { "name": "Carrot",         "slug": "carrot",         "category": "Vegetables",        "aliases": ["gajar"],              "isStaple": false },
+  { "name": "Peas",           "slug": "peas",           "category": "Vegetables",        "aliases": ["matar"],              "isStaple": false },
+  { "name": "Cauliflower",    "slug": "cauliflower",    "category": "Vegetables",        "aliases": ["gobi"],               "isStaple": false },
+
+  { "name": "Lemon",          "slug": "lemon",          "category": "Fruits",            "aliases": ["nimbu"],              "isStaple": false },
+  { "name": "Banana",         "slug": "banana",         "category": "Fruits",            "aliases": ["kela"],               "isStaple": false },
+
+  { "name": "Egg",            "slug": "egg",            "category": "Dairy and Eggs",    "aliases": ["anda"],               "isStaple": false },
+  { "name": "Milk",           "slug": "milk",           "category": "Dairy and Eggs",    "aliases": ["doodh"],              "isStaple": false },
+  { "name": "Yogurt",         "slug": "yogurt",         "category": "Dairy and Eggs",    "aliases": ["dahi"],               "isStaple": false },
+  { "name": "Butter",         "slug": "butter",         "category": "Dairy and Eggs",    "aliases": ["makhan"],             "isStaple": false },
+
+  { "name": "Chicken",        "slug": "chicken",        "category": "Meat and Fish",     "aliases": ["murgh"],              "isStaple": false },
+  { "name": "Beef Mince",     "slug": "beef-mince",     "category": "Meat and Fish",     "aliases": ["keema"],              "isStaple": false },
+
+  { "name": "Basmati Rice",   "slug": "basmati-rice",   "category": "Grains and Flour",  "aliases": ["chawal"],             "isStaple": false },
+  { "name": "Whole Wheat Flour","slug": "atta",         "category": "Grains and Flour",  "aliases": ["atta", "wheat flour"],"isStaple": false },
+  { "name": "Bread",          "slug": "bread",          "category": "Grains and Flour",  "aliases": ["pao", "roti"],        "isStaple": false },
+  { "name": "Pasta",          "slug": "pasta",          "category": "Grains and Flour",  "aliases": [],                    "isStaple": false },
+
+  { "name": "Red Lentils",    "slug": "red-lentils",    "category": "Lentils and Beans", "aliases": ["masoor daal"],        "isStaple": false },
+  { "name": "Yellow Lentils", "slug": "yellow-lentils", "category": "Lentils and Beans", "aliases": ["moong daal"],         "isStaple": false },
+  { "name": "Chickpeas",      "slug": "chickpeas",      "category": "Lentils and Beans", "aliases": ["chana", "garbanzo"], "isStaple": false },
+
+  { "name": "Turmeric",       "slug": "turmeric",       "category": "Spices",            "aliases": ["haldi"],              "isStaple": true  },
+  { "name": "Cumin Seeds",    "slug": "cumin-seeds",    "category": "Spices",            "aliases": ["zeera"],              "isStaple": true  },
+  { "name": "Garam Masala",   "slug": "garam-masala",   "category": "Spices",            "aliases": ["garam masala"],       "isStaple": true  },
+  { "name": "Coriander Powder","slug":"coriander-powder","category": "Spices",           "aliases": ["dhania powder"],      "isStaple": true  },
+  { "name": "Red Chilli Powder","slug":"red-chilli-powder","category":"Spices",          "aliases": ["lal mirch"],          "isStaple": true  },
+  { "name": "Salt",           "slug": "salt",           "category": "Spices",            "aliases": ["namak"],              "isStaple": true  },
+
+  { "name": "Cooking Oil",    "slug": "cooking-oil",    "category": "Oils and Condiments","aliases": ["tail", "oil"],       "isStaple": true  },
+  { "name": "Tomato Ketchup", "slug": "ketchup",        "category": "Oils and Condiments","aliases": ["sauce"],             "isStaple": false },
+
+  { "name": "Water",          "slug": "water",          "category": "Other",             "aliases": ["pani"],               "isStaple": true  }
+]
