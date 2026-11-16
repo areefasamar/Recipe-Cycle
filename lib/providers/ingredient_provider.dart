@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
 import '../models/ingredient.dart';
-import '../services/local_data_service.dart';
+import '../services/api_service.dart';
 
 /// Loads and filters the full ingredient list.
 /// Exposes ingredients grouped by category, filtered by the current search text.
 class IngredientProvider extends ChangeNotifier {
-  final LocalDataService _service;
+  final ApiService _service;
 
   IngredientProvider(this._service);
 

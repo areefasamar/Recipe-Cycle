@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import '../models/recipe_match.dart';
-import '../services/local_data_service.dart';
+import '../services/api_service.dart';
 
 /// Runs the match query and exposes loading / error / results to the UI.
 class RecipeProvider extends ChangeNotifier {
-  final LocalDataService _service;
+  final ApiService _service;
 
   RecipeProvider(this._service);
 

@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'providers/ingredient_provider.dart';
 import 'providers/pantry_provider.dart';
 import 'providers/recipe_provider.dart';
-import 'services/local_data_service.dart';
+import 'services/api_service.dart';
 import 'services/pantry_storage.dart';
 import 'screens/ingredient_checklist_screen.dart';
 import 'theme/app_theme.dart';
@@ -17,17 +17,19 @@ class RecipeCycleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final apiService = ApiService();
+
     // MultiProvider makes both providers available to the entire widget tree
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => IngredientProvider(LocalDataService()),
+          create: (_) => IngredientProvider(apiService),
         ),
         ChangeNotifierProvider(
           create: (_) => PantryProvider(PantryStorage()),
         ),
         ChangeNotifierProvider(
-          create: (_) => RecipeProvider(LocalDataService()),
+          create: (_) => RecipeProvider(apiService),
         ),
       ],
       child: MaterialApp(
